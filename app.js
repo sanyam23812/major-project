@@ -93,7 +93,7 @@ app.use("/", users);
 
 
 app.use("/" , (req,res) =>{
-res.send("/listings");
+res.redirect("/listings");
 });    
 
 //error
