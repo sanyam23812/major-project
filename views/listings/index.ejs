@@ -1,0 +1,114 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <style>
+    #filters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .filter{
+        text-align: center;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        opacity: 0.7;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+  </style>
+     <div id="filters">
+        <div class="filter">
+           <div> <i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-chess-rook"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-tractor"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p> Boats</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-car"></i></div>
+            <p>cars</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-car"></i></div>
+            <p>Domes</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-plane"></i></div>
+            <p>Flight</p>
+        </div>
+      
+
+
+     </div>
+     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 ">
+        <% for(let listing of alllistings){ %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card col listing-card" >
+                <img src="<%=listing.image.url%>" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %>
+                            <br>
+                            &#8377;
+                            <%= listing.price.toLocaleString("en-IN") %> / night
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <% } %>
+
+     </div>
+    
+  
+</body>
+
+<!-- 68c2cbcf639a2353d95182de
+68c2cbcf639a2353d95182e8
+68c2cbcf639a2353d95182ee
+
+db.listings.updateOne(
+{ "_id": ObjectId("68c2cbcf639a2353d95182ee") },
+{
+"$set": {
+"image": {
+"url": "https://imageio.forbes.com/specials-images/imageserve/6599ecc61f1596daf3d7e154/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+"filename": "a_new_filename"
+}
+}
+}
+) -->

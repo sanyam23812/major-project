@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK-MY-STAY</title>
+</head> -->
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <br><br>
+<body>
+    <h3>CREATE NEW LISTING</h3>
+    <form method="post" action="/listings" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control" required>
+            <div class="valid-feedback">title looks good</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required></textarea>
+            <div class="invalid-feedback">please enter a short description</div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input name="listing[image]" placeholder="enter image url/link" class="form-control">
+        </div>
+        <div class="row">
+        <div class="mb-3 col-4">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="2000"  class="form-control" required>
+            <div class="invalid-feedback">enter valid price</div>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]"type="text" placeholder="Jaipur,Rajasthan" class="form-control" required>
+            <div class="invalid-feedback">enter location</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
+            <div class="invalid-feedback">enter country</div>
+        </div>
+        <button class="btn btn-dark ad-btn">SUBMIT</button>
+        <br><br>
+    </form>
+    </div>
+    </div>
+    
