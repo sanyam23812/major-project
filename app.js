@@ -91,8 +91,13 @@ app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
 app.use("/", users);
 
+
+app.use("/" , (req,res) =>{
+res.send("/listings");
+});    
+
 //error
-app.all("*", (req, res, next) => {
+app.all(/.* /, (req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
 });
 
